@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Projects</title>
+</head>
+<body>
+    <h1>My Projects</h1>
+    <ul>
+        {% for project in projects %}
+            <li>
+                <strong>{{ project.title }}</strong>: {{ project.descripcion }}
+                <img src="{{ project.image.url }}" alt="{{ project.title }}" style="width:200px;height:auto;">
+                {% if project.url %}
+                    <p><a href="{{ project.url }}">Más información</a></p>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
